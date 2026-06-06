@@ -72,6 +72,11 @@
           "type": "boolean",
           "default": false,
           "description": "Automatically convert readme.txt to README.md when saving."
+        },
+        "wpReadme.warnOnReadmeMdSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Warn when saving README.md in a folder that also contains a readme.txt."
         }
       }
     }
