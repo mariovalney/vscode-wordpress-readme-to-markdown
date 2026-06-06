@@ -18,7 +18,6 @@
     "converter",
     "plugin"
   ],
-  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/mariovalney/vscode-wordpress-readme-to-markdown"
