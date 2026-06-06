@@ -1,0 +1,98 @@
+{
+  "name": "wordpress-readme-to-markdown",
+  "displayName": "WordPress Readme to Markdown",
+  "description": "Convert WordPress plugin readme.txt files to README.md Markdown format",
+  "version": "1.0.0",
+  "publisher": "mariovalney",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Formatters"
+  ],
+  "keywords": [
+    "wordpress",
+    "readme",
+    "markdown",
+    "converter",
+    "plugin"
+  ],
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mariovalney/vscode-wordpress-readme-to-markdown"
+  },
+  "license": "MIT",
+  "activationEvents": [
+    "onLanguage:ini",
+    "workspaceContains:**/readme.txt"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "wordpressReadmeToMarkdown.convert",
+        "title": "Convert to README.md",
+        "category": "WordPress Readme"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceFilename == readme.txt",
+          "command": "wordpressReadmeToMarkdown.convert",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "resourceFilename == readme.txt",
+          "command": "wordpressReadmeToMarkdown.convert",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "when": "resourceFilename == readme.txt",
+          "command": "wordpressReadmeToMarkdown.convert",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "wordpressReadmeToMarkdown.convert",
+          "when": "resourceFilename == readme.txt"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "WordPress Readme to Markdown",
+      "properties": {
+        "wordpressReadmeToMarkdown.convertOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically convert readme.txt to README.md when saving."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "mocha": "^11.7.6",
+    "typescript": "^5.0.0"
+  }
+}
