@@ -70,7 +70,7 @@
       "properties": {
         "wpReadme.convertOnSave": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Automatically convert readme.txt to README.md when saving."
         },
         "wpReadme.warnOnReadmeMdSave": {
