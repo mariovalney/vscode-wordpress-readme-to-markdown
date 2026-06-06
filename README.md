@@ -31,7 +31,8 @@ Inspired by the [Sublime Text plugin](https://github.com/claudiosanches/wordpres
 
 | Setting | Default | Description |
 |---|---|---|
-| `wordpressReadmeToMarkdown.convertOnSave` | `false` | Auto-convert `readme.txt` to `README.md` on save |
+| `wpReadme.convertOnSave` | `true` | Auto-convert `readme.txt` to `README.md` on save |
+| `wpReadme.warnOnReadmeMdSave` | `true` | Warn when saving `README.md` in a folder that also contains a `readme.txt` |
 
 ## License
 

@@ -20,15 +20,27 @@ export function activate(context: vscode.ExtensionContext): void {
 
   const onSaveListener = vscode.workspace.onDidSaveTextDocument(async (document) => {
     const config = vscode.workspace.getConfiguration('wpReadme');
-    if (!config.get<boolean>('convertOnSave')) {
+    const fileName = path.basename(document.fileName).toLowerCase();
+    const dir = path.dirname(document.fileName);
+
+    if (fileName === 'readme.txt' && config.get<boolean>('convertOnSave')) {
+      await convertFile(document.uri);
       return;
     }
 
-    if (path.basename(document.fileName).toLowerCase() !== 'readme.txt') {
-      return;
+    if (fileName === 'readme.md' && config.get<boolean>('warnOnReadmeMdSave')) {
+      const readmeTxtPath = path.join(dir, 'readme.txt');
+      if (fs.existsSync(readmeTxtPath)) {
+        vscode.window.showWarningMessage(
+          'This folder has a readme.txt. Changes to README.md may be overwritten by WP Readme to Markdown.',
+          'Open readme.txt'
+        ).then(action => {
+          if (action === 'Open readme.txt') {
+            vscode.workspace.openTextDocument(readmeTxtPath).then(doc => vscode.window.showTextDocument(doc));
+          }
+        });
+      }
     }
-
-    await convertFile(document.uri);
   });
 
   context.subscriptions.push(convertCommand, onSaveListener);

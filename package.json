@@ -18,7 +18,6 @@
     "converter",
     "plugin"
   ],
-  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/mariovalney/vscode-wordpress-readme-to-markdown"
@@ -71,8 +70,13 @@
       "properties": {
         "wpReadme.convertOnSave": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Automatically convert readme.txt to README.md when saving."
+        },
+        "wpReadme.warnOnReadmeMdSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Warn when saving README.md in a folder that also contains a readme.txt."
         }
       }
     }
