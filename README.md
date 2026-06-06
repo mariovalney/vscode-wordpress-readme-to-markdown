@@ -1,6 +1,6 @@
-# WordPress Readme to Markdown
+# WP Readme to Markdown
 
-VS Code extension that converts WordPress plugin `readme.txt` files to `README.md` Markdown format.
+VS Code extension that converts WP plugin `readme.txt` files to `README.md` Markdown format.
 
 Inspired by the [Sublime Text plugin](https://github.com/claudiosanches/wordpress-readme-to-markdown) by Claudio Sanches.
 
@@ -24,7 +24,7 @@ Inspired by the [Sublime Text plugin](https://github.com/claudiosanches/wordpres
 
 1. Open a WordPress plugin `readme.txt` in VS Code
 2. Right-click the file in the Explorer or in the editor → **Convert to README.md**  
-   _or_ open the Command Palette and run **WordPress Readme: Convert to README.md**
+   _or_ open the Command Palette and run **WP Readme: Convert to README.md**
 3. A `README.md` is created in the same directory
 
 ## Settings

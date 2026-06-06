@@ -1,7 +1,7 @@
 {
   "name": "wordpress-readme-to-markdown",
-  "displayName": "WordPress Readme to Markdown",
-  "description": "Convert WordPress plugin readme.txt files to README.md Markdown format",
+  "displayName": "WP Readme to Markdown",
+  "description": "Convert WP plugin readme.txt files to README.md Markdown format",
   "version": "1.0.0",
   "publisher": "mariovalney",
   "engines": {
@@ -34,7 +34,7 @@
       {
         "command": "wordpressReadmeToMarkdown.convert",
         "title": "Convert to README.md",
-        "category": "WordPress Readme"
+        "category": "WP Readme"
       }
     ],
     "menus": {
@@ -67,7 +67,7 @@
       ]
     },
     "configuration": {
-      "title": "WordPress Readme to Markdown",
+      "title": "WP Readme to Markdown",
       "properties": {
         "wordpressReadmeToMarkdown.convertOnSave": {
           "type": "boolean",
