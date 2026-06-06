@@ -5,7 +5,7 @@ import { convertReadmeToMarkdown } from './converter';
 
 export function activate(context: vscode.ExtensionContext): void {
   const convertCommand = vscode.commands.registerCommand(
-    'wordpressReadmeToMarkdown.convert',
+    'wpReadme.convert',
     async (uri?: vscode.Uri) => {
       const fileUri = uri ?? vscode.window.activeTextEditor?.document.uri;
 
@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext): void {
   );
 
   const onSaveListener = vscode.workspace.onDidSaveTextDocument(async (document) => {
-    const config = vscode.workspace.getConfiguration('wordpressReadmeToMarkdown');
+    const config = vscode.workspace.getConfiguration('wpReadme');
     if (!config.get<boolean>('convertOnSave')) {
       return;
     }

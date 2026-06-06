@@ -32,7 +32,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "wordpressReadmeToMarkdown.convert",
+        "command": "wpReadme.convert",
         "title": "Convert to README.md",
         "category": "WP Readme"
       }
@@ -41,27 +41,27 @@
       "explorer/context": [
         {
           "when": "resourceFilename == readme.txt",
-          "command": "wordpressReadmeToMarkdown.convert",
+          "command": "wpReadme.convert",
           "group": "navigation"
         }
       ],
       "editor/context": [
         {
           "when": "resourceFilename == readme.txt",
-          "command": "wordpressReadmeToMarkdown.convert",
+          "command": "wpReadme.convert",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
           "when": "resourceFilename == readme.txt",
-          "command": "wordpressReadmeToMarkdown.convert",
+          "command": "wpReadme.convert",
           "group": "navigation"
         }
       ],
       "commandPalette": [
         {
-          "command": "wordpressReadmeToMarkdown.convert",
+          "command": "wpReadme.convert",
           "when": "resourceFilename == readme.txt"
         }
       ]
@@ -69,7 +69,7 @@
     "configuration": {
       "title": "WP Readme to Markdown",
       "properties": {
-        "wordpressReadmeToMarkdown.convertOnSave": {
+        "wpReadme.convertOnSave": {
           "type": "boolean",
           "default": false,
           "description": "Automatically convert readme.txt to README.md when saving."
